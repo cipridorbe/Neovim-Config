@@ -39,5 +39,5 @@ luac.out
 *.x86_64
 *.hex
 
-
+# Packer file
 plugin/packer_compiled.lua
