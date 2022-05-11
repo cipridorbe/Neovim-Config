@@ -35,7 +35,9 @@ local options = {
 	-- Turn on 24-bit colors
 	termguicolors = true,
 
-	-- Format options configs 
+	-- Format options configs.
+	-- TODO Removing default opts does not work
+	formatoptions = '',
 	formatoptions = 'q' .. 'l' .. '1' .. 'j',
 
 	-- Other configs
@@ -53,6 +55,8 @@ local options = {
 
 	-- Configs required by plugins
 }
+
+vim.cmd[[set formatoptions-=cro]]
 
 -- Load the options
 for option, value in pairs(options) do
