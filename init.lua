@@ -2,6 +2,7 @@
 local files = {
 	"options",
 	"keymaps",
+	"plugins",
 }
 
 -- Actually source the files
