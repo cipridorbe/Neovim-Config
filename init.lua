@@ -4,6 +4,7 @@ local files = {
 	"keymaps",
 	"plugins",
 	"colorscheme",
+	"cmp",
 }
 
 -- Actually source the files

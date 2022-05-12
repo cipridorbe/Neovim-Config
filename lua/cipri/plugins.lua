@@ -55,6 +55,16 @@ return packer.startup(function(use)
 	use "LunarVim/darkplus.nvim"
 	use "LunarVim/onedarker.nvim"
 
+	-- Autocomplete with cmp
+	use "hrsh7th/nvim-cmp" -- The completion plugin
+	use "hrsh7th/cmp-buffer" -- Buffer completions
+	use "hrsh7th/cmp-path" -- Path completions
+	use "hrsh7th/cmp-cmdline" -- Cmdline completions
+	use "saadparwaiz1/cmp_luasnip" -- Snippet completions with luasnip
+
+	-- Snippets
+	use "L3MON4D3/LuaSnip" -- Snippet engine
+	use "rafamadriz/friendly-snippets" -- A lot of snippets to use
 
 	-- Set up config automatically after plugin installation
 	if packer_bootstrap then
