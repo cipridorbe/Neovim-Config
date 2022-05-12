@@ -10,7 +10,7 @@ local options = {
 	-- Allow mouse to be used, and highlight cursor row
 	mouse = "a",
 	cursorline = true,
-	cursorlineopt = {"number",},  -- To highlight cursor row, and screenline to list 
+	cursorlineopt = {"number", "screenline"},  -- To highlight cursor row, and screenline to list 
 
 	-- Display line numbers, and display errors and warning in the same column. Make this column 2 columns long by default
 	number = true,

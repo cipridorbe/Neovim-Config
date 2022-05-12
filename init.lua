@@ -3,6 +3,7 @@ local files = {
 	"options",
 	"keymaps",
 	"plugins",
+	"colorscheme",
 }
 
 -- Actually source the files

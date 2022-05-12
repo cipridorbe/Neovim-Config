@@ -41,13 +41,19 @@ packer.init{
 	}
 }
 
+-- IMPORTANT PART IS HERE
 -- Plugin installation
 return packer.startup(function(use)
 	-- Plugins go here
-	-- Necessary plugins
+	-- Packer and plugins required by other plugins
 	use "wbthomason/packer.nvim" -- Have packer manage itself
 	use "nvim-lua/popup.nvim" -- An implementation of the Popup API from vim in Neovim
 	use "nvim-lua/plenary.nvim" -- Useful lua functions used ny lots of plugins
+
+	-- Colorschemes
+	use "folke/tokyonight.nvim"
+	use "LunarVim/darkplus.nvim"
+	use "LunarVim/onedarker.nvim"
 
 
 	-- Set up config automatically after plugin installation
