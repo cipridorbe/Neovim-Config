@@ -74,3 +74,58 @@ NBind("X", '"_X')
 
 -- Replace selected text. Overrides h register
 keymap('v', "<leader>r", "\"hy:<C-u>%s/<C-r>h//gc<Left><Left><Left>", {noremap = true})
+
+-- Alt y or p to copy to system clipboard
+keymap('', "<A-y>", '"*y', opts)
+keymap('', "<A-yy>", '"*yy', opts)
+keymap('', "<A-p>", '"*p', opts)
+
+-- Plugin keymaps
+-- cmp
+local cmp_ok, cmp = pcall(require, "cmp")
+local luasnip_ok, luasnip = pcall(require, "luasnip")
+if cmp_ok and luasnip then
+	cmp.setup{
+		mapping = {
+			["<C-k>"] = cmp.mapping.select_prev_item(),
+			["<C-j>"] = cmp.mapping.select_next_item(),
+			["<C-b>"] = cmp.mapping(cmp.mapping.scroll_docs(-1), { "i", "c" }),
+			["<C-f>"] = cmp.mapping(cmp.mapping.scroll_docs(1), { "i", "c" }),
+			["<C-Space>"] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }),
+			["<C-y>"] = cmp.config.disable, -- Specify `cmp.config.disable` if you want to remove the default `<C-y>` mapping.
+			["<C-e>"] = cmp.mapping {
+				i = cmp.mapping.abort(),
+				c = cmp.mapping.close(),
+			},
+			-- Accept currently selected item. If none selected, `select` first item.
+			-- Set `select` to `false` to only confirm explicitly selected items.
+			["<CR>"] = cmp.mapping.confirm { select = true },
+			["<Tab>"] = cmp.mapping(function(fallback)
+				if cmp.visible() then
+					cmp.select_next_item()
+				elseif luasnip.expandable() then
+					luasnip.expand()
+				elseif luasnip.expand_or_jumpable() then
+					luasnip.expand_or_jump()
+				else
+					fallback()
+				end
+			end, {
+			"i",
+			"s",
+		}),
+		["<S-Tab>"] = cmp.mapping(function(fallback)
+			if cmp.visible() then
+				cmp.select_prev_item()
+			elseif luasnip.jumpable(-1) then
+				luasnip.jump(-1)
+			else
+				fallback()
+			end
+		end, {
+		"i",
+		"s",
+		}),
+	}
+}
+end
