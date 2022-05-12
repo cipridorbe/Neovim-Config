@@ -11,6 +11,7 @@ local options = {
 	mouse = "a",
 	cursorline = true,
 	cursorlineopt = {"number", "screenline"},  -- To highlight cursor row, and screenline to list 
+	colorcolumn = "80",
 
 	-- Display line numbers, and display errors and warning in the same column. Make this column 2 columns long by default
 	number = true,
@@ -54,6 +55,7 @@ local options = {
 	gdefault = true,
 
 	-- Configs required by plugins
+	completeopt = {"menu", "menuone", "noselect"},
 }
 
 vim.cmd[[set formatoptions-=cro]]
