@@ -74,10 +74,8 @@ local function lsp_highlight_document(client)
 	end
 end
 
-
--- Function implementation in keymaps
-function lsp_keymaps(bufnr)
-end
+-- Implementation in lua/cipri/keymaps.lua
+local lsp_keymaps = require("cipri.keymaps").LSP_keymaps
 
 -- On attach function for lspconfig server setup
 M.on_attach = function(client, bufnr)
