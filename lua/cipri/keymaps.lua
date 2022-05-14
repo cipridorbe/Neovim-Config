@@ -1,5 +1,6 @@
 -- https://neovim.io/doc/user/map.html#map-table
 -- Facilitate making keymaps
+local M = {}
 local opts = {noremap = true, silent = true,}
 local termopts = {silent = true,}
 local keymap = vim.api.nvim_set_keymap
@@ -91,7 +92,7 @@ if cmp_ok and luasnip then
 			["<C-j>"] = cmp.mapping.select_next_item(),
 			["<C-b>"] = cmp.mapping(cmp.mapping.scroll_docs(-1), { "i", "c" }),
 			["<C-f>"] = cmp.mapping(cmp.mapping.scroll_docs(1), { "i", "c" }),
-			["<C-Space>"] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }),
+			["<C-Space>"] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }),	
 			["<C-y>"] = cmp.config.disable, -- Specify `cmp.config.disable` if you want to remove the default `<C-y>` mapping.
 			["<C-e>"] = cmp.mapping {
 				i = cmp.mapping.abort(),
@@ -99,7 +100,7 @@ if cmp_ok and luasnip then
 			},
 			-- Accept currently selected item. If none selected, `select` first item.
 			-- Set `select` to `false` to only confirm explicitly selected items.
-			["<CR>"] = cmp.mapping.confirm { select = true },
+			["<CR>"] = cmp.mapping.confirm {select = false},
 			["<Tab>"] = cmp.mapping(function(fallback)
 				if cmp.visible() then
 					cmp.select_next_item()
@@ -126,6 +127,46 @@ if cmp_ok and luasnip then
 		"i",
 		"s",
 		}),
+		}
 	}
-}
 end
+
+
+-- Keymaps for lspconfig
+M.LSP_keymaps = function(bufnr)
+	local bkey = vim.api.nvim_buf_set_keymap
+	-- Keymaps
+	bkey(bufnr, 'n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>', opts)
+	bkey(bufnr, 'n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
+	bkey(bufnr, 'n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', opts)
+	bkey(bufnr, 'n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
+	bkey(bufnr, 'n', 'S', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
+	bkey(bufnr, 'i', '<C-l>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
+	-- bkey(bufnr, 'n', '<space>wa', '<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>', opts)
+	-- bkey(bufnr, 'n', '<space>wr', '<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>', opts)
+	-- bkey(bufnr, 'n', '<space>wl', '<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>', opts)
+	bkey(bufnr, 'n', '<space>D', '<cmd>lua vim.lsp.buf.type_definition()<CR>', opts)
+	bkey(bufnr, 'n', '<space>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
+	-- bkey(bufnr, 'n', '<space>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
+	-- bkey(bufnr, 'n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
+	-- bkey(bufnr, 'n', '<space>f', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
+	-- Extras
+	bkey(bufnr, 'n', '<d', '<cmd>lua vim.diagnostic.goto_prev()<CR>', opts)
+	bkey(bufnr, 'n', '>d', '<cmd>lua vim.diagnostic.goto_prev()<CR>', opts)
+	bkey(bufnr, 'n', 'gl', '<cmd>lua vim.lsp.diagnostic.show_line_diagnostics<CR>', opts)
+	-- :Format to format
+	vim.cmd[[command! Format execute 'lua vim.lsp.buf.formatting()']]
+end
+
+-- Telescope keymaps
+local telescope_ok, telescope = pcall(require, "telescope")
+if telescope_ok then
+	NBind("<leader>tt", "<cmd>Telescope find_files<CR>")
+	NBind("<leader>tl", "<cmd>Telescope live_grep<CR>")
+	NBind("<leader>tb", "<cmd>Telescope buffers<CR>")
+	NBind("gr", "<cmd>Telescope lsp_references<CR>")
+	NBind("<leader>tb", "<cmd>Telescope current_buffer_fuzzy_find<CR>")
+end
+
+
+return M

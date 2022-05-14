@@ -1,10 +1,12 @@
--- Files to source. All in lua/cipri/
+-- Files or directories to source. All in lua/cipri/
 local files = {
 	"options",
 	"keymaps",
 	"plugins",
 	"colorscheme",
 	"cmp",
+	"lsp",
+	"telescope",
 }
 
 -- Actually source the files

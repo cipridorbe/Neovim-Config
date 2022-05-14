@@ -50,6 +50,10 @@ return packer.startup(function(use)
 	use "nvim-lua/popup.nvim" -- An implementation of the Popup API from vim in Neovim
 	use "nvim-lua/plenary.nvim" -- Useful lua functions used ny lots of plugins
 
+	-- Icons for plugins
+	use "kyazdani42/nvim-web-devicons"
+	use "ryanoasis/vim-devicons"
+
 	-- Colorschemes
 	use "folke/tokyonight.nvim"
 	use "LunarVim/darkplus.nvim"
@@ -61,10 +65,20 @@ return packer.startup(function(use)
 	use "hrsh7th/cmp-path" -- Path completions
 	use "hrsh7th/cmp-cmdline" -- Cmdline completions
 	use "saadparwaiz1/cmp_luasnip" -- Snippet completions with luasnip
+	use "hrsh7th/cmp-nvim-lsp" -- Lsp completion
+	use "hrsh7th/cmp-nvim-lua" -- Vim api for lua completion
 
 	-- Snippets
 	use "L3MON4D3/LuaSnip" -- Snippet engine
 	use "rafamadriz/friendly-snippets" -- A lot of snippets to use
+
+	-- LSP
+	use "neovim/nvim-lspconfig" -- LSP
+	use "williamboman/nvim-lsp-installer" -- Language server installer
+
+	-- Telescope and extensions
+	use "nvim-telescope/telescope.nvim"
+	use {"nvim-telescope/telescope-fzf-native.nvim", run = 'make'}
 
 	-- Set up config automatically after plugin installation
 	if packer_bootstrap then
