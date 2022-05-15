@@ -168,5 +168,9 @@ if telescope_ok then
 	NBind("<leader>tb", "<cmd>Telescope current_buffer_fuzzy_find<CR>")
 end
 
+-- NvimTree keymaps
+local nvimtree_ok, nvim_tree = pcall(require, "nvim-tree")
+if nvimtree_ok then
+	NBind('<leader>e', '<cmd>NvimTreeToggle<CR>')
 
 return M

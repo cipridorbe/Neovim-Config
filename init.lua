@@ -11,6 +11,7 @@ local files = {
 	"autopairs",
 	"comments",
 	"gitsigns",
+	"nvimtree",
 }
 
 -- Actually source the files
