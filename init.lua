@@ -12,6 +12,7 @@ local files = {
 	"comments",
 	"gitsigns",
 	"nvimtree",
+	"bufferline",
 }
 
 -- Actually source the files

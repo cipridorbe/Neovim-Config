@@ -29,8 +29,8 @@ NBind("<C-Right>", "<cmd>vertical resize +2<CR>")
 NBind("<C-Left>", "<cmd>vertical resize -2<CR>")
 
 -- Alt H and L to switch buffers
-NBind("<A-H>", "<cmd>bprev<CR>")
-NBind("<A-L>", "<cmd>bnext<CR>")
+NBind("<A-h>", "<cmd>bprev<CR>")
+NBind("<A-l>", "<cmd>bnext<CR>")
 
 -- Use H and L to move to start and end of line
 keymap('', "H", "^", opts)

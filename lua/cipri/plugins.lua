@@ -96,6 +96,10 @@ return packer.startup(function(use)
 	-- Directory tree
 	use "kyazdani42/nvim-tree.lua"
 
+	-- Bufferline (line at top)
+	use "akinsho/bufferline.nvim"
+	use "moll/vim-bbye"
+
 	-- Set up config automatically after plugin installation
 	if packer_bootstrap then
 		require('packer').sync()
