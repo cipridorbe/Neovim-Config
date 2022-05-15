@@ -80,6 +80,10 @@ return packer.startup(function(use)
 	use "nvim-telescope/telescope.nvim"
 	use {"nvim-telescope/telescope-fzf-native.nvim", run = 'make'}
 
+	-- Treesitter
+	use {"nvim-treesitter/nvim-treesitter", run = ":TSUpdate"}
+
+
 	-- Set up config automatically after plugin installation
 	if packer_bootstrap then
 		require('packer').sync()

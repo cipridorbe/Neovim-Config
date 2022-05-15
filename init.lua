@@ -7,6 +7,7 @@ local files = {
 	"cmp",
 	"lsp",
 	"telescope",
+	"treesitter",
 }
 
 -- Actually source the files
