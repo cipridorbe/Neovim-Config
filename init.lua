@@ -9,6 +9,7 @@ local files = {
 	"telescope",
 	"treesitter",
 	"autopairs",
+	"comments",
 }
 
 -- Actually source the files
