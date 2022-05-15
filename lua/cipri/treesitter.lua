@@ -7,6 +7,9 @@ end
 treesitter.setup{
 	ensure_installed = "all",
 	sync_install = false,
+	autopairs = {
+		enable = true,
+	}
 	highlight = {
 		enable = true,
 		disable = {""},
