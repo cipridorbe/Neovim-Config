@@ -172,5 +172,6 @@ end
 local nvimtree_ok, nvim_tree = pcall(require, "nvim-tree")
 if nvimtree_ok then
 	NBind('<leader>e', '<cmd>NvimTreeToggle<CR>')
+end
 
 return M

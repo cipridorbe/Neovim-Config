@@ -3,7 +3,6 @@ if not nvimtree_ok then
 	vim.notify("Could not load nvim-tree")
 	return
 end
-
 -- Keymaps for the NvimTree window
 local function map(key, action)
 	return {key = key, action = action}
