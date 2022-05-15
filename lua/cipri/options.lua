@@ -16,7 +16,7 @@ local options = {
 	-- Display line numbers, and display errors and warning in the same column. Make this column 2 columns long by default
 	number = true,
 	relativenumber = false,
-	signcolumn = "number",
+	signcolumn = "yes",
 	numberwidth = 2,
 
 	-- Scrolloff and wrap configs

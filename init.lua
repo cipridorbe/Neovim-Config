@@ -10,6 +10,7 @@ local files = {
 	"treesitter",
 	"autopairs",
 	"comments",
+	"gitsigns",
 }
 
 -- Actually source the files
