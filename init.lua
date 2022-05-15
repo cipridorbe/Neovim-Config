@@ -8,9 +8,10 @@ local files = {
 	"lsp",
 	"telescope",
 	"treesitter",
+	"autopairs",
 }
 
 -- Actually source the files
 for _, file in ipairs(files) do
-	require("cipri." .. file)
+	 require("cipri." .. file)
 end

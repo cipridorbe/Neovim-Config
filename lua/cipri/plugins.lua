@@ -83,6 +83,9 @@ return packer.startup(function(use)
 	-- Treesitter
 	use {"nvim-treesitter/nvim-treesitter", run = ":TSUpdate"}
 
+	-- Autopairs
+	use "windwp/nvim-autopairs"
+
 
 	-- Set up config automatically after plugin installation
 	if packer_bootstrap then
