@@ -8,3 +8,4 @@ end
 -- Files to load
 require("cipri.lsp.lsp-installer")
 require("cipri.lsp.handlers").setup()
+require("cipri.lsp.null-ls")
