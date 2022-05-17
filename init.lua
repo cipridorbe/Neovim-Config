@@ -13,7 +13,8 @@ local files = {
 	"gitsigns",
 	"nvimtree",
 	"bufferline",
-	"lualine"
+	"lualine",
+	"toggleterm",
 }
 
 -- Actually source the files

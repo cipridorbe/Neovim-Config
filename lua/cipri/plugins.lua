@@ -102,6 +102,9 @@ return packer.startup(function(use)
 	use "akinsho/bufferline.nvim"
 	use "moll/vim-bbye"
 
+	-- Terminal window
+	use "akinsho/toggleterm.nvim"
+
 	-- Set up config automatically after plugin installation
 	if packer_bootstrap then
 		require('packer').sync()
