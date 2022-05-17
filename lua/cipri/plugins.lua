@@ -97,7 +97,8 @@ return packer.startup(function(use)
 	-- Directory tree
 	use "kyazdani42/nvim-tree.lua"
 
-	-- Bufferline (line at top)
+	-- Lualine (line at bottom) and Bufferline (line at top)
+	use "nvim-lualine/lualine.nvim"
 	use "akinsho/bufferline.nvim"
 	use "moll/vim-bbye"
 
