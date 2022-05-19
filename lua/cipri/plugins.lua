@@ -105,6 +105,9 @@ return packer.startup(function(use)
 	-- Terminal window
 	use "akinsho/toggleterm.nvim"
 
+	-- Indentline
+	use "lukas-reineke/indent-blankline.nvim"
+
 	-- Set up config automatically after plugin installation
 	if packer_bootstrap then
 		require('packer').sync()

@@ -15,6 +15,7 @@ local files = {
 	"bufferline",
 	"lualine",
 	"toggleterm",
+	"indentline",
 }
 
 -- Actually source the files
