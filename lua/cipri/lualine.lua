@@ -83,7 +83,7 @@ lualine.setup {
 		component_separators = {left = '', right = ''},
 		section_separators = {left = '', right = ''},
 		-- Don't use lualine on this filetypes (:echo &filetype to see current filetype)
-		disabled_filetypes = {},
+		disabled_filetypes = {"alpha"},
 		always_divide_middle = true,
 		globalstatus = false,
 	},
@@ -105,5 +105,6 @@ lualine.setup {
 	},
 	extensions = {
 		"nvim-tree",
+		"toggleterm",
 	},
 }

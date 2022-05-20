@@ -18,6 +18,7 @@ local files = {
 	"indentline",
 	"alpha",
 	"impatient",
+	"project",
 }
 
 -- Actually source the files

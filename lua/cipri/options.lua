@@ -38,7 +38,6 @@ local options = {
 
 	-- Format options configs.
 	-- TODO Removing default opts does not work
-	formatoptions = '',
 	formatoptions = 'q' .. 'l' .. '1' .. 'j',
 
 	-- Other configs
@@ -53,12 +52,11 @@ local options = {
 	wildmenu = true,
 	wildmode = "list:longest",
 	gdefault = true,
+	showmode = false,
 
 	-- Configs required by plugins
 	completeopt = {"menu", "menuone", "noselect"},
 }
-
-vim.cmd[[set formatoptions-=cro]]
 
 -- Load the options
 for option, value in pairs(options) do
