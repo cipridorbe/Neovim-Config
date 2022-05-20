@@ -16,6 +16,8 @@ local files = {
 	"lualine",
 	"toggleterm",
 	"indentline",
+	"alpha",
+	"impatient",
 }
 
 -- Actually source the files

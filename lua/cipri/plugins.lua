@@ -108,6 +108,12 @@ return packer.startup(function(use)
 	-- Indentline
 	use "lukas-reineke/indent-blankline.nvim"
 
+	-- Alpha (used when opening nvim without a file)
+	use "goolord/alpha-nvim"
+
+	-- Impatient (fast startup times)
+	use "lewis6991/impatient.nvim"
+
 	-- Set up config automatically after plugin installation
 	if packer_bootstrap then
 		require('packer').sync()
